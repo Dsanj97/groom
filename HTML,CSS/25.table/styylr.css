@@ -1,0 +1,30 @@
+.table {
+    display: table;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.row, .cell {
+    padding: 1px;
+}
+
+.container {
+    display: table;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.container .box+.box {
+    border-left: 3px solid lightcoral;
+}
+
+.container .box {
+    display: table-cell;
+    text-align: center;
+}

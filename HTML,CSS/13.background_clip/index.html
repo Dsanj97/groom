@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #example1{
+            border: 10px dotted black;
+            padding: 10px;
+            background-color: lightcoral;
+            background-clip: border-box;
+        }
+
+        #example2{
+            border: 10px dotted black;
+            padding: 10px;
+            background-color: lightcoral;
+            background-clip: padding-box;
+        }
+
+        #example3{
+            border: 10px dotted black;
+            padding: 10px;
+            background-color: lightcoral;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <p>background_clip : border-box(this is default)</p>
+    <div id="example1">
+        <p>The background extend behind the border</p>
+    </div>
+
+    <p>background_clip : padding-box</p>
+    <div id="example2">
+        <p>The background extend to the indide edge of the border</p>
+    </div>
+
+    <p>background_clip : border-box</p>
+    <div id="example3">
+        <p>The background extend to the edge od the content-box</p>
+    </div>
+</body>
+</html>

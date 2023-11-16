@@ -1,0 +1,99 @@
+.main-banner {
+    width: 100%;
+    height: 75vh; /* 화면 높이의 2/3 */
+    position: relative;
+    overflow: hidden;
+}
+
+
+.main-image {
+    width: 100%;
+    object-fit: cover; /* 이미지가 컨테이너를 꽉 채우도록 함 */
+    object-position: top;
+    display: block;
+    position: relative;
+    border: none;
+}
+
+.banner-container {
+    height: 75vh;
+}
+
+.main-banner::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 33%; /* 화면 높이의 1/3 지점부터 시작 */
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    filter: blur(0px);
+}
+
+.banner-title {
+    position: absolute; 
+    bottom: 2px; 
+    left: 0; 
+    width: 100%; 
+    padding: 10px 20px; 
+    color: #fff; 
+    font-size: 24px; 
+    box-sizing: border-box; 
+    z-index: 100;
+}
+
+.movi-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.content-row {
+    bottom: 60px; 
+    width: 120%;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.content-row h2 {
+    margin-left: 20px;
+    color: #fff; 
+}
+
+.content-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    scrollbar-width: none;
+}
+
+.content-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.content-item {
+    min-width: 200px; 
+    margin-right: 10px;
+}
+
+.content-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px; /* 필요에 따라 조정 */
+
+    transition: transform 0.3s ease-in-out; /* 애니메이션 효과를 위한 전환 설정 */
+    display: block; /* 이미지가 블록 레벨 요소로 표시되도록 설정 */
+}
+
+.content-item:hover img {
+    transform: scale(1.3); /* 이미지를 10% 확대 */
+}
+
+.second-title {
+    width: 100%; /* 배너 너비와 동일하게 설정 */
+    padding: 10px 20px; /* 내부 여백 추가 */
+    color: #fff; /* 텍스트 색상을 흰색으로 설정 */
+    font-size: 24px; /* 텍스트 크기 설정 */
+    box-sizing: border-box; /* 패딩을 너비에 포함 */
+    z-index: 100;
+}

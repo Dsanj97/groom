@@ -1,0 +1,315 @@
+.main-container {
+    background-color: var(--primary);
+    margin-top: 44px;
+    margin-bottom: 44px;
+    display: flex;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 935px;
+    padding: 0 0 8px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.content {
+    width: 100%;
+    max-width: 614px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.stories {
+    width: 100%;
+    background-color: var(--primary);
+    padding: 16px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.stories::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border);
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+
+/* story */
+
+.story {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.story-avertar {
+    position: relative;
+}
+
+.story-border {
+    width: 64px;
+    height: 64px;
+    fill: none;
+    stroke: #c7c7c7;
+    stroke-width: 1.5;
+}
+
+.story-picture {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    overflow: hidden ;
+}
+
+.story-user {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-transform: lowercase;
+    max-width: 72px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.stories-content {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px;
+    padding: 0 16px;
+    position: relative;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.stories-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* post */
+
+.post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.post-header {
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.post-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.post-user {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+ /* 유저이름에 호버시 언더라인 생성 */
+ .post-user:hover{
+    text-decoration: underline;
+ }
+
+ /* 옵션 3개점 이미지 변경 */
+
+.post-more-options {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.post-content {
+    display: flex;
+    position: relative;
+}
+
+/* 이미지를 감싸고 있는부분 */
+.post-medias {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+/* post-media 에 스크롤바 없애기 */
+
+.post-medias::-webkit-scrollbar {
+    display: none;
+}
+
+/* 게시물 시진 */
+.post-media {
+    width: 100%;
+    flex: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* post footer */
+.post-footer {
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 4px;
+}
+
+/* 아이콘버트 3개 */
+.post-buttons{
+    display: flex;
+    position: relative;
+} 
+
+.post-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    padding: 8px;
+}
+
+/* 저장버튼 옆으로 밀어주기 */
+.post-button-align-right {
+    margin-left: auto;
+}
+
+/* post info 부분 정의 */
+.post-infos {
+    display: flex;
+    flex-direction: column;
+    padding: 0 8px;
+    gap: 10px;
+}
+
+.post-likes,
+.post-description {
+    display: flex;
+}
+
+.post-likes {
+    align-items: center;
+    gap: 6px;
+}
+
+.post-likes-avatar {
+    width: 20px;
+    height: 20px;
+    border: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 게시물 글 */
+.post-likes span,
+.post-description span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.post-likes a,
+.post-description a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+/* hover시 underline */
+.post-name-underline:hover{
+    text-decoration: underline;
+}
+
+/* 몇분전 인지 스타일링 */
+.post-date-time {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+@media (min-width : 620px) {
+    .content-container{
+        padding: 30px 0 24px
+    }
+    .content {
+        gap: 24px;
+    }
+    .stories {
+        border: 1px solid var(--border);
+        border-radius: 4px;
+    }
+    .stories::after{
+        content: none;
+    }
+    .posts {
+        gap: 24px;
+    }
+    .post {
+        border: 1px solid var(--border);
+        border-radius: 4px;
+    }
+    .post-footer {
+        padding: 4px 8px 12px;
+    }
+    .post-date-time {
+        margin-top: 6px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-container {
+        background-color: var(--secondary);
+    }
+    .content {
+        margin: unset;
+    }
+}

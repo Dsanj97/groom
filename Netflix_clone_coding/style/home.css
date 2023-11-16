@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+
+* {
+    box-sizing: border-box; /* 모든 요소의 박스 사이징을 border-box로 설정합니다 */
+}

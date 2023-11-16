@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .box-container {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #669966;
+        }
+
+        .box-container .box {
+            padding: 10px;
+            border: 1px solid green;
+            background-color:#ffdddd;
+        }
+ 
+        #static-box {
+            position: static;
+            left: 30px;
+        }
+
+        #relative-box{
+            position: relative;
+            top: 20px;
+            left: 30px;
+        }
+
+        #absolute-box{
+            position: absolute;
+            top: 20px;
+            right: 150px;
+        }
+
+        #fixed-box {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+        }
+
+        #relative-box-1 {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            margin-top: 150px;
+            border: 3px solid #669966;
+        }
+
+        #absolute-box-1 {
+            position: absolute;
+            top: 40px;
+            left: 30px;
+        }
+
+        #sticky {
+            position: sticky;
+            top: 100px;
+            padding: 5px;
+            background-color: aqua;
+            border: 2px solid #ffdddd;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box-container">
+        <div id="static-box" class="box">static</div>
+        <div id="relative-box" class="box">relative</sdiv>
+        <div id="absolute-box" class="box">absolute</div>
+        <div id="fixed-box" class="box">fixed</div>
+    </div>
+
+    <div id="relative-box-1">
+        relative
+        <div id="absolute-box-1">
+            absolute
+        </div>
+    </div>
+
+    <div id="sticky">I am sticky</div>
+    <div style="padding-bottom: 2000px;">
+        qasdasdasdasdasdasdadasdasd
+        dsadasdasdasdasdasdasdasdasd
+        dsadasdasdasdasdasdasdasdasd
+        qasdasdasdasdasdasdadasdasd
+        dsadasdasdasdasdasdasdasdasd
+        dsadasdasdasdasdasdasdasdasd
+        qasdasdasdasdasdasdadasdasd
+        dsadasdasdasdasdasdasdasdasd
+        dsadasdasdasdasdasdasdasdasd
+        qasdasdasdasdasdasdadasdasd
+        dsadasdasdasdasdasdasdasdasd
+        dsadasdasdasdasdasdasdasdasd
+        qasdasdasdasdasdasdadasdasd
+        dsadasdasdasdasdasdasdasdasd
+        dsadasdasdasdasdasdasdasdasd
+        qasdasdasdasdasdasdadasdasd
+        dsadasdasdasdasdasdasdasdasd
+        dsadasdasdasdasdasdasdasdasd
+        qasdasdasdasdasdasdadasdasd
+        dsadasdasdasdasdasdasdasdasd
+        dsadasdasdasdasdasdasdasdasd
+        
+    </div>
+</body>
+</html>

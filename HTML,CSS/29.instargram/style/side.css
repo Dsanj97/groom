@@ -1,0 +1,176 @@
+.side-menu {
+    max-width: 290px;
+    position: fixed;
+    left: 50%;
+    top: 84px;
+    transform: translate(calc(-50% + 322px));
+    display: none;
+    flex-direction: column;
+}
+
+/*  사이드바 유저 프로필 틀 */
+.side-menu-user-profile {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 22px;
+}
+/* 사이드바 유저 프로필 사진 */
+.side-menu-user-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+/* 사이드바 유저 인포부분 */
+.side-menu-user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    gap: 4px;
+}
+/* a태그 부분 따로 스타일링 */
+.side-menu-user-info a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-decoration: none;
+    text-transform: lowercase;
+    max-width: 180px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* span 태그에 관련된 부분 */
+.side-menu-user-info span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-light);
+    max-width: 180px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/* 버튼 스타일링 */
+.side-menu-user-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0093ff;
+}
+/* 나머지 밑에부분에 대한 큰 틀 */
+.side-menu-suggestion-section {
+    display: flex;
+    flex-direction: column;
+}
+/* footer의 head부분 */
+.side-menu-suggestions-header {
+    display: flex;
+    justify-content: space-between;
+}
+/* text 스타일링 */
+.side-menu-suggestions-header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+/* 옆에있는 버튼 스타일링 */
+.side-menu-suggestions-header button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* 전체적인 스타일링 */
+.side-menu-suggestions-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px 0 24px;
+    padding-left: 4px;
+}
+
+.side-menu-suggestion {
+    display: flex;
+    align-items: center;
+}
+/* 아바타 스타일링 */
+.side-menu-suggestion-avatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+}
+/* 추천 유저에 대한 설명 부분 */
+.side-menu-suggestion-info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1;
+    gap: 2px;
+}
+
+.side-menu-suggestion-info a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-decoration: none;
+    text-transform: lowercase;
+    max-width: 180px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* 호버시 */
+.side-menu-suggestion-info a:hover {
+    text-decoration: underline;
+}
+/* span부분 스타일링 */
+.side-menu-suggestion-info span {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-light);
+    max-width: 180px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* 버튼 스타일링 */
+.side-menu-suggestion-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0099F5;
+    flex-shrink: 0;
+}
+
+
+
+.side-menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.side-menu-footer-list {
+    display: flex;
+    list-style: none;
+}
+
+@media (min-width: 1024px){
+    .side-menu {
+        display: flex;
+    }
+}
