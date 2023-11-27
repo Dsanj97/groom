@@ -19,3 +19,5 @@ val = window.location
 console.log(val)
 
 // window.location.href = 'http://google.com'
+
+window.history
