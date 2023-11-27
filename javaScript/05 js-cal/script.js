@@ -47,4 +47,4 @@ console.log(val)
 
 // 1 ~ 20 사이의 값중에 랜덤으로 출력
 val = Math.floor(Math.random() * 20 + 1)
-console.log(val)
+console.log(val) 
