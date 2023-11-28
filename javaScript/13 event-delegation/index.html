@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event delegation</title>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="buttons">
+        <button class="buttonClass">Click me</button>
+        <button class="buttonClass">Click me</button>
+    </div>
+    </form>
+    <script>
+        // const buttons = document.getElementsByClassName('buttonClass');
+
+        // for (const button of buttons) {
+        //     button.addEventListener('click', (e) => alert('clicked'));
+        // }
+
+        // 버튼 생성 => 이러면 이미만들어진 버튼에게만 이벤트가 발생하고 스크립트로 짠 버튼은 이벤트 등록이 불가함
+        // 그래서 buttonList 의 이벤트 리스너의 등록을 다음에 해야함
+        // const buttonList = document.querySelector('#buttons');
+        // const button = document.createElement('button');
+        // button.setAttribute('class', 'buttonClass')
+        // button.innerText = 'Click me';
+        // buttonList.appendChild(button);
+
+        const buttonList = document.querySelector('#buttons');
+        buttons.addEventListener('click', () => alert('clicked'))
+
+        const button = document.createElement('button');
+        button.setAttribute('class', 'buttonClass')
+        button.innerText = 'Click me';
+        buttonList.appendChild(button);
+
+
+    </script>
+</body>
+</html>
