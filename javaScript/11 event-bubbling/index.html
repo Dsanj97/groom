@@ -19,15 +19,13 @@
         </div>
     </form>
 
-
-
-
-
     <script src="script.js">
         const form = document.querySelector('form');
         const div = document.querySelector('div');
         const p = document.querySelector('p');
 
+        // event target은 ==> 실제 이벤트가 시작되는 타겟 요소
+        // this (event.currentTarget) ==> 핸들러가 할당된 요소
         form.oncancel = function(event) {
             event.target.style.backgroundColor = 'yellow';
         }
