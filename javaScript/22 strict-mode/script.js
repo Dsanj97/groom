@@ -10,9 +10,11 @@ function sum(a, b){
 class Cat {
 
 }
+// ===== =====
 
 let greeting = 'hello';
 
+// 오타가 나더라고 출력을 할수 있다
 greating = 'goodbye';
 
 console.log(greeting);
