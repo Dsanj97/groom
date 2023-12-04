@@ -29,3 +29,18 @@ fetch('http://jsonplaceholder.typicode.com/todos/1')
    .then(data1 => console.log(data1))
    .catch(error => console.log(error))
    .finally(() => console.log('finally'));
+
+// async await
+async function makeRequests() {
+    try{
+        const response2 = await fetch('http://jsonplaceholder.typicode.com/todos/1');
+        const jasonResponse1 = await response2.json()
+        console.log(jasonResponse1);
+    } catch (error) {
+        console.error(error);
+    } finally {
+        console.log('finally!');
+    }
+}
+
+makeRequests()
