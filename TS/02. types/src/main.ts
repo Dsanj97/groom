@@ -92,5 +92,36 @@ func2 = function () {
 }
 
 // null, undefined
+// "strictNullChecks": false // strict null checks
+// 설정하면 잘 할당되는것을 확인할수 있다
 let number1: number = undefined
 let string1: string = null
+let object: {a: 10, b: 20} = undefined
+let array: any = undefined
+let undefined1: undefined = null
+let null1: null = undefined
+let void1: void = null
+
+// void 타입
+function greeting(): void {
+    console.log('hi')
+}
+
+const hi: void = greeting()
+console.log(hi) // undefined
+
+// never
+// 리턴값을 절대 내보내지 않거나 애러를 출력할때(확신)
+function throwError(): never {
+    throw new Error('error')
+}
+
+function keepProcessing(): never {
+    while (true) {
+        console.log('hi')
+    }
+}
+
+// never안에는 다른것을 할당할수 없다
+const never: [] = []
+never.push(1)
