@@ -1,0 +1,16 @@
+{
+    "compilerOptions": { 
+        "rootDir" : "./src",  // root directory
+        "outDir": "./build/js", // build directory
+        "target": "ES6", // es6 target
+        "noEmitOnError": false, // do not emit on error
+        "module": "ESNext", // module format
+        "moduleResolution": "Node", // module resolution
+        "esModuleInterop": true, // module interop
+        "lib": ["ESNext", "DOM"], // libraries
+        "strict": true, // strict mode
+    },
+    "include": [
+        "./src/**/*.ts" // files to include
+    ]
+}
