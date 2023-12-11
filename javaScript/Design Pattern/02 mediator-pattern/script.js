@@ -11,7 +11,7 @@ class Participant {
 
     receive(message, from) {
         this.messages.push({message, from});
-    }
+    } 
 
     showMessages() {
         console.log(this.messages);

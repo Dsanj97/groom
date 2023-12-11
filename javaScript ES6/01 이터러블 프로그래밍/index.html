@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/fxjs/dist/fx.js"></script>
+    <script>
+        const { L, C } = window._;
+        _.go(
+          [1, 2, 3],
+          L.map(a => a * a),
+          L.map(_.delay(300)),
+          C.takeAll,
+          _.reduce(_.add),
+          //console.log
+        );
+        // 출력: 약 300ms 후에 '14'
+    </script>
+    <script>
+        // 1. 홀수 n개 더하기
+
+        function f1(limit, list) {
+            let acc = 0;
+            for (const a of list) {
+                if (a % 2) {
+                    const b = a * a;
+                    acc += b;
+                    if (--limit === 0) break;
+                }
+            }
+            console.log('f1')
+            console.log(acc);
+        }
+
+        f1(3, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+
+        // 2. if 를 liter로 
+        // 3. 값 변환후 변수할강을 map으로
+        // 4 .break를 take로
+        // 5. 축약 및 합산을 reduce로
+
+        function f2(limit, list) {
+            let acc = 0;
+            for (const a of L.take(limit, L.map(a => a * a, L.filter(a => a % 2, list)))) {
+                acc += a;
+            }
+            console.log('f2')
+            console.log(acc);
+        }
+
+        f2(3, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+    </script>
+    <script>
+        function f3(limit, list) {
+            console.log(
+                _.reduce((acc, a) => acc + a, 0,
+                    L.take(limit, 
+                        L.map(a => a * a, 
+                            L.filter(a => a % 2, list)))))
+        }
+
+        f3(3, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+    </script>
+    <script>
+        // 6. while 문을 range로
+        // 7. 효과를  each로
+        function f4(end){
+            let i = 0
+            while (i < end){
+                console.log(i)
+                ++i
+            }
+        }
+        f4(10)
+
+        // ===== =====
+        function f5(end){
+            _.each(console.log, L.range(end))
+        }
+        f5(10)
+    </script>
+</body>
+</html>
