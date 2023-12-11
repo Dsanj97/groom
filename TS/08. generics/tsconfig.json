@@ -1,7 +1,7 @@
 {
     "compilerOptions": { 
-        "rootDir" : "../03. type-assertion, type-guard/src",  // root directory
-        "outDir": "../03. type-assertion, type-guard/build/js", // build directory
+        "rootDir" : "./src",  // root directory
+        "outDir": "./build/js", // build directory
         "target": "ES6", // es6 target
         "noEmitOnError": false, // do not emit on error
         "module": "ESNext", // module format
@@ -12,6 +12,6 @@
         "strictNullChecks": false // strict null checks
     },
     "include": [
-        "../03. type-assertion, type-guard/src/**/*.ts" // files to include
+        "./src/**/*.ts" // files to include
     ]
 }

@@ -1,25 +1,51 @@
-// body 값이 null일수도 있기때문에 애러가발생하지만
-// 확실히 null값이 아니라는걸 말하기 위해 ! 사용
-const bodyElement = document.querySelector('body')
-bodyElement!.innerText = 'Hello World!'
+// interface 의 경우
+// interface Animal {
+//     name: string
+// }
 
-// as HTMLBodyElement 사용
-const bodyElement2 = document.querySelector('body') as HTMLBodyElement
-bodyElement2.innerText = 'Hello World!'
+// interface Bear extends Animal {
+//      honey: boolean
+// }
 
+// const bear1: Bear = {
+//     name: 'honey bear',
+//     honey: true
+// }
 
-// type-guard
-const bodyElement3 = document.querySelector('body')
-if (bodyElement3){
-    bodyElement3.innerText = 'Hello World!'
+// type의 경우
+type Animal = {
+    name: string
 }
 
-// null 값일경우 타입가드 사용해야함
-function func(arg: string | null) {
-    if(arg){
-    return (arg as string).toLowerCase() // string의 경우만 실행
-    }
+type Bear = Animal & {
+    honey: boolean
 }
 
-func('hello')
-func(null)
+const bear1: Bear = {
+    name: 'honey bear',
+    honey: true
+}
+
+// 같은게 두개면 병합이 되어버린다
+interface Animal2 {
+    name: string
+}
+
+interface Animal2 {
+    honey: boolean
+}
+
+const animal2: Animal2 = {
+    name: 'honey bear',
+    honey: true
+}
+
+// type의 경우 중복 불가
+// type Animal3 {
+//     name: string
+// }
+
+// type Animal3{
+//     honey: boolean
+// }
+
