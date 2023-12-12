@@ -20,7 +20,7 @@ const user = {
 type UserKeys2 = keyof typeof user;
 
 // enum으로 해보기
-enum Color {
+enum Color {    
     Red,
     Green,
     Blue
