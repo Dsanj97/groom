@@ -1,4 +1,4 @@
-package sec10.error;
+package sec10.chap01;
 
 public class error {
     public static void main(String[] args) {

@@ -1,2 +1,6 @@
-package sec09.chap01_Lambda;public interface DoubleParam {
+package sec09.chap01_Lambda;
+
+@FunctionalInterface
+public interface DoubleParam  {
+    int func(int a, int b);
 }

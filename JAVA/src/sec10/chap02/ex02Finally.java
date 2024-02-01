@@ -1,4 +1,4 @@
-package sec10.tryCatch;
+package sec10.chap02;
 
 import sec07Game.*;
 

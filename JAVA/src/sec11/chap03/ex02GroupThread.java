@@ -2,7 +2,7 @@ package sec11.chap03;
 
 import java.util.Scanner;
 
-public class ex02 {
+public class ex02GroupThread {
     public static void main(String[] args) {
         // 쓰레드 그룹 만들기
         ThreadGroup groupA = new ThreadGroup("A");

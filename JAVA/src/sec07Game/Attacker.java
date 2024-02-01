@@ -1,2 +1,5 @@
-package sec07Game;public class Attacker {
+package sec07Game;
+
+public interface Attacker {
+    void defaultAttack(Unit target);
 }

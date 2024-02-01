@@ -1,2 +1,4 @@
-package sec06.chap07.ex05;public class MagicKnight {
+package sec06.chap07.ex05;
+
+public class MagicKnight extends Knight {
 }
