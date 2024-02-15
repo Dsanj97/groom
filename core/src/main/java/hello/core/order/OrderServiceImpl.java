@@ -6,10 +6,13 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+//@RequiredArgsConstructor // 롬복에서 만들어 주는 생성지
 public class OrderServiceImpl implements OrderService {
 
     // 두가지 기능이 필요함
@@ -27,8 +30,22 @@ public class OrderServiceImpl implements OrderService {
 
     private final DiscountPolicy discountPolicy;
 
+    // setter 로 의존관계 주입 하기 private final MemberRepository memberRepository; ==> private MemberRepository memberRepository;
+//    @Autowired
+//    public void setMemberRepository(MemberRepository memberRepository){
+//        System.out.println("memberRepository = " + memberRepository);
+//        this.memberRepository = memberRepository;
+//    }
+//
+//    @Autowired
+//    public void setDiscountPolicy(DiscountPolicy discountPolicy){
+//        System.out.println("discountPolicy = " + discountPolicy);
+//        this.discountPolicy = discountPolicy;
+//    }
+
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        System.out.println("1 = " + 1);
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

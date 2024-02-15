@@ -3,7 +3,7 @@ package hello.core.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component // 스피링 빈 으로 자동 등록
+@Component // 스피링 빈 으로 자동 등록 -> memberServiceImpl (이름)
 public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;
