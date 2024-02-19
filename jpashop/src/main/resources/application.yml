@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop;MVCC=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create #자동으로 테이블을 만들어 주는것
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug # 하이버네이트 aql을 디버그모드로 사용
