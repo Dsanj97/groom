@@ -1,8 +1,11 @@
 package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.aspectj.weaver.ast.Or;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
     @Id @GeneratedValue
@@ -48,5 +52,48 @@ public class Order {
     public void setDelivery(Delivery delivery){
         this.delivery = delivery;
         delivery.setOrder(this);
+    }
+
+
+    //==생성 매서드==//
+    //주문이 생성만 한다고 끝나는게 아니라 좀더 복잡한 로직을 가지고 있다
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+        Order order = new Order(); // 주문 만들어주고
+        order.setMember(member); // 맴버 세팅해주고
+        order.setDelivery(delivery); // 주소 설정해주고
+        for (OrderItem orderItem : orderItems) {
+            order.addOrderItem(orderItem);
+        } // 아이템들 넣기
+        order.setStatus(OrderStatus.ORDER); // 상태 설정
+        order.setOrderdate(LocalDateTime.now()); // 주문시간 설정
+        return order;
+    }
+
+    //==비즈니스 로직==//
+    /*
+     * 주문 취소
+     */
+    public void cancel() {
+        if (delivery.getStatus() == DeliveryStatus.COMP){ // 배송이 끝나버림
+            throw new IllegalStateException("이미 배송완료된 상품은 취소가 불가능 합니다");
+        }
+
+        this.setStatus(OrderStatus.CANCEL); // 주문의 상태를 취소로 변경
+        for (OrderItem orderItem : orderItems) {
+            orderItem.cancel(); // 취소 로직
+        }
+    }
+
+    //==조회 로직==//
+
+    /*
+     * 전체 주문 가격 조회
+     */
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (OrderItem orderItem : orderItems) {
+            totalPrice += orderItem.getTotalPrice();
+        }
+        return totalPrice;
     }
 }
