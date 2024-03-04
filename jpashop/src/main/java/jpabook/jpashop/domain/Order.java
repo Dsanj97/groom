@@ -35,7 +35,7 @@ public class Order {
 
     private LocalDateTime orderdate; // 주문 시간
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) // string 이 아니면 나중에 꼬일수 있음
     private OrderStatus status; // 주문 상태 [ORDER, CANCEL]
 
     // 연관관계 매서드 양방향일때 쓰면 좋다
